@@ -9,7 +9,7 @@
     color: E81123
     sections:
     - title: This is the **section's title** property
-      activity_image: http://connectorsdemo.azurewebsites.net/images/MSC12_Oscar_002.jpg
+      activity_image: https://d2.alternativeto.net/dist/s/podman_510269_full.png?format=jpg&width=200&height=200&mode=crop
       activity_title: This is the section's **activityTitle** property
       activity_subtitle: This is the section's **activitySubtitle** property
       activity_text: This is the section's **activityText** property.
