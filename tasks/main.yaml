@@ -1,4 +1,4 @@
 ---
 # tasks file for create-send-webhook
-- name: Create a simple Connector Card
+- name: Send notification to MS Teams
   include_tasks: send-to-msteams.yaml
