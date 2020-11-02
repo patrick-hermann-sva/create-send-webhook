@@ -9,7 +9,6 @@
     act_image: "https://d2.alternativeto.net/dist/s/podman_510269_full.png?format=jpg&width=200&height=200&mode=crop"
     act_title: "{{ release-name }} {{ release-version }}"
     act_subtitle: "git tag: {{ git_repo_version }}"
-    act_text: "{{ item }}"
-      with_random_choice: "{{ Quotes }}"
+    act_text: "{{ quotes | random }}"
   roles:
     - create-send-webhook
