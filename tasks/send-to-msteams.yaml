@@ -1,10 +1,10 @@
-- name: Create a simple Connector Card
+- name: Send notification to MS Teams
   community.general.office_365_connector_card:
     webhook: "{{ msteams_url }}"
     summary: This is the summary property
     sections:
     - title: "{{ card_title }}"
-      activity_image: https://d2.alternativeto.net/dist/s/podman_510269_full.png?format=jpg&width=200&height=200&mode=crop
+      activity_image: "{{ act_image }}"
       activity_title: "{{ act_title }}"
       activity_subtitle: "{{ act_subtitle }}"
       activity_text: "{{ act_text }}"
