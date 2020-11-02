@@ -1,0 +1,4 @@
+- name: Create a simple Connector Card
+  community.general.office_365_connector_card:
+    webhook: {{ msteams_url }} https://outlook.office.com/webhook/GUID/IncomingWebhook/GUID/GUID
+    text: {{ card_text }}

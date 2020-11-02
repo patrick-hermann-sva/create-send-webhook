@@ -1,2 +1,4 @@
 ---
 # tasks file for create-send-webhook
+- name: Create a simple Connector Card
+  include_tasks: send-to-msteams.yaml
