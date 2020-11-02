@@ -1,6 +1,7 @@
 - name: Create a simple Connector Card
   community.general.office_365_connector_card:
     webhook: "{{ msteams_url }}"
+    summary: This is the summary property
     sections:
     - title: "{{ card_title }}"
       activity_image: https://d2.alternativeto.net/dist/s/podman_510269_full.png?format=jpg&width=200&height=200&mode=crop
