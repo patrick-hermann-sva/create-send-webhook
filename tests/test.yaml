@@ -6,7 +6,7 @@
   vars:
     msteams_url: "https://outlook.office.com/webhook/2f14a9f8-4736-46dd-9c8c-31547ec37180@0a65cb1e-37d5-41ff-980a-647d9d0e4f0b/IncomingWebhook/70f1b61bd3e34f928d664ea1b6ee1c30/dc3a27ed-396c-40b7-a9b2-f1a2b6b44efe"
     card_title: "Jenkins finished build"
-    act_image: "../files/pipe.png"
+    act_image: "https://as1.ftcdn.net/jpg/03/14/43/36/500_F_314433648_49RfhNG5cIpN7uK2jbNbPOHnAb5zI3AC.jpg"
     act_title: "Release package for {{ release_name }} {{ release_version }} created"
     act_subtitle: "git tag: {{ git_repo_version }}"
     act_text: "{{ quotes | random }}"
