@@ -1,5 +1,6 @@
 ---
 # defaults file for create-send-webhook
+ms_teams_notification_type: "simple"
 quotes:
   - "Nice Job Bro"
   - "Excellent"
