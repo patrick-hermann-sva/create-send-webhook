@@ -9,6 +9,10 @@
       activity_title: "{{ act_title }}"
       activity_subtitle: "{{ act_subtitle }}"
       activity_text: "{{ act_text }}"
+
+- name: Add link to connector card
+  when: "{{ build_state }}" == success
+  community.general.office_365_connector_card:
     actions:
     - "@type": OpenUri
       name: "{{ link_name }}"
