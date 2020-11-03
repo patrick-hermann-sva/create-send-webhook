@@ -14,4 +14,4 @@
         name: Release Artifacts
         targets:
         - os: default
-          uri: "http://10.31.102.195:5000/buckets\chosenbucket=install-openshift-aws"
+          uri: "http://10.31.102.195:5000/buckets?chosenbucket=deploy-openshift-clusterlogging"
