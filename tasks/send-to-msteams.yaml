@@ -8,7 +8,7 @@
       activity_image: "{{ act_image }}"
       activity_title: "{{ act_title }}"
       activity_subtitle: "{{ act_subtitle }}"
-      activity_text: "{{ quotes | random }}"
+      activity_text: "{{ act_text }}"
     actions:
     - "@type": OpenUri
       name: "{{ link_name }}"
