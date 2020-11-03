@@ -2,7 +2,7 @@
 - name: Send notification to MS Teams
   community.general.office_365_connector_card:
     webhook: "{{ msteams_url }}"
-    summary: This is the summary property
+    summary: "{{ summary_text }}"
     sections:
     - title: "{{ card_title }}"
       activity_image: "{{ act_image }}"
