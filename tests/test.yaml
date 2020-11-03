@@ -10,5 +10,7 @@
     act_image: "https://as1.ftcdn.net/jpg/03/14/43/36/500_F_314433648_49RfhNG5cIpN7uK2jbNbPOHnAb5zI3AC.jpg"
     act_title: "Release package for {{ release_name }} {{ release_version }} created"
     act_subtitle: "git tag: {{ git_repo_version }}"
+    link_name: "Release Artifacts"
+    link_url: "http://10.31.102.195:5000/buckets?chosenbucket=deploy-openshift-clusterlogging"
   roles:
     - create-send-webhook

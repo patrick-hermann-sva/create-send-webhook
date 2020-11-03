@@ -11,7 +11,7 @@
       activity_text: "{{ quotes | random }}"
       actions:
       - "@type": OpenUri
-        name: Release Artifacts
+        name: "{{ link_name }}"
         targets:
         - os: default
-          uri: "http://10.31.102.195:5000/buckets?chosenbucket=deploy-openshift-clusterlogging"
+          uri: "{{ link_url }}"
