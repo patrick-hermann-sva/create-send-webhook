@@ -50,7 +50,7 @@ quotes:
   - "Damn, I’m good!"
   - "I love the smell of bacon in the morning."
   - "I’m an ass kicker, not an aviator."
-  failure_messages:
+failure_messages:
   - "Change is not a four letter word… but often your reaction to it is! (Jeffrey Gitomer)"
   - "Never put off until tomorrow what you can do the day after tomorrow. (Mark Twain)"
   - "It could be that your purpose in life is to serve as a warning to others. (Ashleigh Brilliant)"
