@@ -9,3 +9,9 @@
       activity_title: "{{ act_title }}"
       activity_subtitle: "{{ act_subtitle }}"
       activity_text: "{{ quotes | random }}"
+      actions:
+      - "@type": OpenUri
+        name: Release Artifacts
+        targets:
+        - os: default
+          uri: http://10.31.102.195:5000/buckets\chosenbucket=install-openshift-aws
