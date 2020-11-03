@@ -9,9 +9,9 @@
       activity_title: "{{ act_title }}"
       activity_subtitle: "{{ act_subtitle }}"
       activity_text: "{{ quotes | random }}"
-      actions:
-      - "@type": OpenUri
-        name: "{{ link_name }}"
-        targets:
-        - os: default
-          uri: "{{ link_url }}"
+    actions:
+    - "@type": OpenUri
+      name: "{{ link_name }}"
+      targets:
+      - os: default
+        uri: "{{ link_url }}"
