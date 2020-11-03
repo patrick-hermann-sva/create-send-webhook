@@ -8,4 +8,4 @@
       activity_image: "{{ act_image }}"
       activity_title: "{{ act_title }}"
       activity_subtitle: "{{ act_subtitle }}"
-      activity_text: "{{ act_text }}"
+      activity_text: "{{ quotes | random }}"
