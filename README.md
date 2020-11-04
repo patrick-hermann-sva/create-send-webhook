@@ -1,31 +1,61 @@
-Role Name
-=========
+Stuttgart-things/create-send-webhook
+=======================================
 
-A brief description of the role goes here.
+A Role to send a customized connector card to MS Teams.
 
-Requirements
-------------
+install this role
+-----------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
-
-Role Variables
---------------
-
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+copy the following and paste it on your ansible host to install the roles:
+```
+cat <<EOF > /tmp/requirements.yaml
+roles:
+- src: git@codehub.sva.de:Lab/stuttgart-things/supporting-roles/create-send-webhook.git
+  scm: git
+collections:
+- name: community.general
+  version: 1.2.0
+EOF
+ansible-galaxy install -r /tmp/requirements.yaml --force
+ansible-galaxy collection install -r /tmp/requirements.yaml -f
+rm -rf /tmp/requirements.yaml
+```
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+```
+---
+- hosts: "{{ target_host | default('localhost') }}"
+  vars_files:
+    - "/tmp/Releasefile"
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+  vars:
+    summary_text: "App notification text"
+    msteams_url: "https://outlook.office.com/webhook/GUID/IncomingWebhook/GUID/GUID"
+    card_title: "title for connector card"
+    act_image: "https://.../.jpg"
+    act_title: "activity title"
+    act_subtitle: "activity subtitle"
+    act_text: "activity text"
+    link_name: "text for link"
+    link_url: "http://..."
+  roles:
+    - create-send-webhook
+```
+
+Playbook execution (example)
+-----------------------------
+
+```
+ansible-playbook create-send-webhook.yaml -vv
+```
+
+Role history
+----------------
+| date  | who | changelog |
+|---|---|---|
+|2020-11-02  | Christian Müller | intial commit for this role in codehub / initialy needed for rancher-things automation
 
 License
 -------
@@ -35,4 +65,4 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Christian Müller (christian.mueller@sva.de), SVA GmbH, 11/2020
