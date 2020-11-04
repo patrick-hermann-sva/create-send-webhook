@@ -1,5 +1,5 @@
 ---
-- name: Send notification to MS Teams
+- name: Send simple notification to MS Teams
   community.general.office_365_connector_card:
     webhook: "{{ msteams_url }}"
     summary: "{{ summary_text }}"
@@ -11,7 +11,7 @@
       activity_text: "{{ act_text }}"
   when: ms_teams_notification_type=="simple"
 
-- name: Send notification to MS Teams
+- name: Send simple notification w/ one link to MS Teams
   community.general.office_365_connector_card:
     webhook: "{{ msteams_url }}"
     summary: "{{ summary_text }}"
