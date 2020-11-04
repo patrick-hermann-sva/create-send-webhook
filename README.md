@@ -1,7 +1,7 @@
 stuttgart-things/create-send-webhook
 =======================================
 
-A Role to send a customized connector card for webhooks.
+role to configure and send customized webhooks to targets like MS TEAMS (supports connector cards).
 
 install this role
 -----------------
@@ -27,6 +27,7 @@ Example Playbook
 ```
 ---
 - hosts: "{{ target_host | default('localhost') }}"
+
   vars:
     summary_text: "App notification text"
     msteams_url: "https://outlook.office.com/webhook/GUID/IncomingWebhook/GUID/GUID"
@@ -37,6 +38,7 @@ Example Playbook
     act_text: "activity text"
     link_name: "text for link"
     link_url: "http://..."
+
   roles:
     - create-send-webhook
 ```
