@@ -7,7 +7,8 @@
     - title: "{{ card_title }}"
       activity_image: "{{ act_image }}"
       activity_title: "{{ act_title }}"
-      activity_subtitle: "{{ act_subtitle }}"
+      activity_subtitle: |
+        "{{ act_subtitle }}"
       activity_text: "{{ act_text }}"
   when: ms_teams_notification_type=="simple"
 
