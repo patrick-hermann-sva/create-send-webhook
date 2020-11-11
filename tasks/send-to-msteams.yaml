@@ -9,8 +9,8 @@
       activity_title: "{{ act_title }}"
       activity_subtitle: "{{ act_subtitle }}"
       activity_text: "{{ act_text }}"
-      {% if facts is defined %}facts:
-      {% for specs in facts.values() %}
+      {% if os_facts is defined %}facts:
+      {% for specs in os_facts.values() %}
       - name: {{ specs.name }}
         value: {{ specs.value }}
       {% endfor %}{% endif %}
