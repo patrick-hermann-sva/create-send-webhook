@@ -13,7 +13,7 @@
       - name: "{{ {{ item.name }} if {{ item.name }} is defined | default('') }}"
         value: "{{ {{ item.value }} if {{ item.value }} is defined | default('') }}"
   when: ms_teams_notification_type=="simple"
-  loop: {{ os_facts|dict2items }}
+  loop: "{{ os_facts|dict2items }}"
 
 - name: Send simple notification w/ one link to MS Teams
   community.general.office_365_connector_card:
