@@ -8,7 +8,7 @@
       activity_image: "{{ act_image }}"
       activity_title: "{{ act_title }}"
       activity_subtitle: "{{ act_subtitle }}"
-      activity_text: "{{ act_text }}"
+      activity_text: "{{ os_facts if os_facts is defined else act_text }}"
   when: ms_teams_notification_type=="simple"
 
 - name: Send simple notification w/ one link to MS Teams
