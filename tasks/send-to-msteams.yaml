@@ -10,8 +10,8 @@
       activity_subtitle: "{{ act_subtitle }}"
       activity_text: "{{ act_text }}"
       facts: 
-      - name: "{{ {{ item.key }} if {{ item.key }} is defined | default('') }}"
-        value: "{{ {{ item.value }} if {{ item.value }} is defined | default('') }}"
+      - name: "{{ item.key if item.key is defined | default('') }}"
+        value: "{{ item.value if item.value is defined | default('') }}"
   when: ms_teams_notification_type=="simple"
   loop: "{{ os_facts|dict2items }}"
 
