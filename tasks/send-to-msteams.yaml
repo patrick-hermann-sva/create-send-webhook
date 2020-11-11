@@ -9,13 +9,7 @@
       activity_title: "{{ act_title }}"
       activity_subtitle: "{{ act_subtitle }}"
       activity_text: "{{ act_text }}"
-      "{{ if os_facts is defined }}"facts:
-      "{{ for item in os_facts.values() }}"
-      - name: "{{ item.key }}"
-        value: "{{ item.value }}"
-      "{{ endfor }}{{ endif }}"
   when: ms_teams_notification_type=="simple"
-  loop: "{{ os_facts|dict2items }}"
 
 - name: Send simple notification w/ one link to MS Teams
   community.general.office_365_connector_card:
