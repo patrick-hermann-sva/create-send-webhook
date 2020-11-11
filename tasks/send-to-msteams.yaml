@@ -9,9 +9,11 @@
       activity_title: "{{ act_title }}"
       activity_subtitle: "{{ act_subtitle }}"
       activity_text: "{{ act_text }}"
-      facts: 
-      - name: "{{ item.key if item.key is defined | default('') }}"
-        value: "{{ item.value if item.value is defined | default('') }}"
+      {{ if os_facts is defined }}facts:
+      {{ for item in os_facts.values() }}
+      - name: "{{ item.key }}"
+        value: "{{ item.value }}"
+      {{ endfor }}{{ endif }}
   when: ms_teams_notification_type=="simple"
   loop: "{{ os_facts|dict2items }}"
 
