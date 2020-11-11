@@ -19,8 +19,8 @@
     - title: "{{ card_title }}"
       activity_image: "{{ act_image }}"
       activity_title: "{{ act_title }}"
-      activity_subtitle: "{{ act_subtitle }}"
-      activity_text: "{{ act_text }}"
+      activity_subtitle: "{{ act_subtitle if act_subtitle is defined else '' }}"
+      activity_text: "{{ os_facts if os_facts is defined else act_text }}"
     actions:
     - "@type": OpenUri
       name: "{{ link_name }}"
