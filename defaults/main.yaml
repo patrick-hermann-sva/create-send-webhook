@@ -89,6 +89,12 @@ farewell:
   - “'Goodbye may seem forever, farewell is like the end. But in my heart's a memory, and there you'll always be.' (Jeanette Nolan as Widow Tweed)"
   - “'Goodbye, Kemp. I always said you were a dirty little coward. You're a dirty sneaking little rat as well. Goodbye.' (Claude Rains as Dr. Jack Griffin aka The Invisible Man)"
   - “'I'll never forget you, Hermione. You was the first woman I didn't have to pay for.' (Jack Nicholson as Henry Lloyd Moon)"
+  - "'More than once, I've wished my real life had a delete key.' (Harlan Coben)"
+  - "'I start a lot of songs and throw them out because the energy is not right. It's almost like the file becomes cursed. I have to delete it.' (Grimes)"
+  - "I would delete Donald Trump. I would delete Hillary Clinton. I would delete the man who was responsible for Brexit.' (Tom Brokaw)" 
+  - "'Anyone I don't know, in my emails or texts, I just delete. If it's someone legitimate, they'll send it again.' (Christine McVie)"
+  - "'Sometimes you have to delete the pictures, delete the number and accept the lesson and move on.' (Nitya Prakash)"
+  - "'When in doubt, delete.' (Nitya Prakash)"
 rename_messages:  
   - "'Names have power.' (Rick Riordan, The Lightning Thief)"
   - "'Call him Voldemort, Harry. Always use the proper name for things. Fear of a name increases fear of the thing itself.' (J.K. Rowling, Harry Potter and the Sorcerer's Stone)"
@@ -98,10 +104,4 @@ rename_messages:
   - "'A wife should no more take her husband's name than he should hers. My name is my identity and must not be lost.' (Lucy Stone)"
   - "'The beginning of wisdom is to call things by their right names.'"
   - "'Better to see the face than to hear the name.'"
-delete_messages:
-  - "'More than once, I've wished my real life had a delete key.' (Harlan Coben)"
-  - "'I start a lot of songs and throw them out because the energy is not right. It's almost like the file becomes cursed. I have to delete it.' (Grimes)"
-  - "I would delete Donald Trump. I would delete Hillary Clinton. I would delete the man who was responsible for Brexit.' (Tom Brokaw)" 
-  - "'Anyone I don't know, in my emails or texts, I just delete. If it's someone legitimate, they'll send it again.' (Christine McVie)"
-  - "'Sometimes you have to delete the pictures, delete the number and accept the lesson and move on.' (Nitya Prakash)"
-  - "'When in doubt, delete.' (Nitya Prakash)"
+move_messages:
