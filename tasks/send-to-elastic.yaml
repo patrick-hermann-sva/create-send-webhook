@@ -1,0 +1,11 @@
+---
+- name: POST data into elasticsearch
+  ansible.builtin.uri:
+    url: "{{ elasticsearch_url }}/{{ indexname }}/_doc"
+    method: POST
+    return_content: yes
+    body: {"time" : "{{ ansible_date_time.iso8601_micro }}", "HOSTNAME": "server-01" }
+    status_code: 201
+    body_format: json
+  register: trigger
+  changed_when: 201 == trigger.status

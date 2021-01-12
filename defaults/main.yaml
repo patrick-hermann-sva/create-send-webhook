@@ -1,5 +1,6 @@
 ---
 # defaults file for create-send-webhook
+send_to_msteams: true
 ignore_webhook_errors: false
 logo_pic: "https://www.clipartmax.com/png/middle/120-1208387_cereal-guy-interested-by-rober-raik-cereal-guy-meme-png.png"
 failure_pic: "https://anthillonline.com/wp-content/uploads/2020/06/failure.png"

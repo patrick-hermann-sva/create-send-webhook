@@ -2,3 +2,8 @@
 # tasks file for create-send-webhook
 - name: Send notification to MS Teams
   include_tasks: send-to-msteams.yaml
+  when: send_to_msteams|bool
+
+- name: Send notification to Elastic
+  include_tasks: send-to-elastic.yaml
+  when: send_to_elastic|bool
