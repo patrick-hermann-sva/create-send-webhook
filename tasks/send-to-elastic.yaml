@@ -9,3 +9,4 @@
     body_format: json
   register: trigger
   changed_when: 201 == trigger.status
+  ignore_errors: true
