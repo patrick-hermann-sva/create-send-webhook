@@ -1,5 +1,5 @@
 ---
-- name: POST data into elasticsearch
+- name: Send webhook-data to elasticsearch
   ansible.builtin.uri:
     url: "{{ elasticsearch_url }}/{{ indexname }}/_doc"
     method: POST
