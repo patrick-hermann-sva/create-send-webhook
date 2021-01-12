@@ -1,19 +1,34 @@
 ---
-- hosts: localhost
-  vars_files:
-    - "/tmp/Releasefile"
+- hosts: "{{ target_host | default('all') }}"
 
   vars:
-    summary_text: "Runs Digga"
+    summary_text: "RUNS DIGGA"
     msteams_url: "https://outlook.office.com/webhook/2f14a9f8-4736-46dd-9c8c-31547ec37180@0a65cb1e-37d5-41ff-980a-647d9d0e4f0b/IncomingWebhook/70f1b61bd3e34f928d664ea1b6ee1c30/dc3a27ed-396c-40b7-a9b2-f1a2b6b44efe"
-    card_title: "Jenkins finished build"
-#    act_image: "https://as1.ftcdn.net/jpg/03/14/43/36/500_F_314433648_49RfhNG5cIpN7uK2jbNbPOHnAb5zI3AC.jpg"
-    act_title: "Release package for {{ release_name }} {{ release_version }} created"
-    act_subtitle: |
-      git tag:
-      {{ git_repo_version }}
-    act_text: "{{ quotes | random }}"
+    card_title: "Deployment runs well"
+    act_image: "{{ logo_pic }}"
+    act_title: "Deployment running"
+    act_subtitle: "SUCCESS"
+    act_text: "{{ quotes|random }}"
     link_name: "Release Artifacts"
     link_url: "http://10.31.102.195:5000/buckets?chosenbucket=deploy-openshift-clusterlogging"
+    ms_teams_notification_type: "{{ 'simple_with_link' }}"
+
+    elasticsearch_url: http://elk-test.labul.sva.de:9200
+    indexname: vsphere-vm
+    body_content: |
+      "time" : "{{ ansible_date_time.iso8601_micro }}",
+      "AWX-JOB-ID" : 1,
+      "HOSTNAME" : "rancher-upi-nginx-test-worker",
+      "CPU" : 8,
+      "RAM" : 6,
+      "DISK" : 64,
+      "VM-FOLDER" : "phermann/testing",
+      "ANSIBLE-HOST" : "awx-bastion",
+      "TEMPLATE-NAME" : "noprompt-workflow-createvm",
+      "PROJECT-REVISION" : "efc6c7fe26f9d4d157b5c9188f72f6c5ff5298ba",
+      "TOWER-USER" : "admin",
+      "JOB-LAUNCH-TYPE" : "workflow"
+    ignore_webhook_errors: false
+
   roles:
     - create-send-webhook
