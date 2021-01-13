@@ -7,7 +7,6 @@
     body: |
       {{ body_content }}
     status_code: 201
-    body_format: json
   register: trigger
   changed_when: 201 == trigger.status
   ignore_errors: "{{ ignore_webhook_errors }}"
