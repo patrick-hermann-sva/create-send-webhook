@@ -16,7 +16,7 @@
     elasticsearch_url: http://elk-test.labul.sva.de:9200
     indexname: vsphere-vm
     body_content: |
-      "time" : "{{ ansible_date_time.iso8601_micro }}",
+      "time" : "{{ ansible_date_time.iso8601_micro }}"
     ignore_webhook_errors: false
 
   roles:
