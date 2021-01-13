@@ -17,17 +17,6 @@
     indexname: vsphere-vm
     body_content: |
       "time" : "{{ ansible_date_time.iso8601_micro }}",
-      "AWX-JOB-ID" : 1,
-      "HOSTNAME" : "rancher-upi-nginx-test-worker",
-      "CPU" : 8,
-      "RAM" : 6,
-      "DISK" : 64,
-      "VM-FOLDER" : "phermann/testing",
-      "ANSIBLE-HOST" : "awx-bastion",
-      "TEMPLATE-NAME" : "noprompt-workflow-createvm",
-      "PROJECT-REVISION" : "efc6c7fe26f9d4d157b5c9188f72f6c5ff5298ba",
-      "TOWER-USER" : "admin",
-      "JOB-LAUNCH-TYPE" : "workflow"
     ignore_webhook_errors: false
 
   roles:

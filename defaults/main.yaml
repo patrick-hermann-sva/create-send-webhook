@@ -1,6 +1,6 @@
 ---
 # defaults file for create-send-webhook
-send_to_msteams: true
+send_to_msteams: false
 send_to_elastic: true
 
 ignore_webhook_errors: false

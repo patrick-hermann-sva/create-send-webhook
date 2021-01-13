@@ -4,7 +4,8 @@
     url: "{{ elasticsearch_url }}/{{ indexname }}/_doc"
     method: POST
     return_content: yes
-    body: "{{ body_content }}"
+    body: |
+      {{ body_content }}
     status_code: 201
     body_format: json
   register: trigger
