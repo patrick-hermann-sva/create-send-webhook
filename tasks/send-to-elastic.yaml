@@ -4,8 +4,7 @@
     url: "{{ elasticsearch_url }}/{{ indexname }}/_doc"
     method: POST
     return_content: yes
-    body: |
-      "time" : "{{ ansible_date_time.iso8601_micro }}"
+    body:  "time" : "{{ ansible_date_time.iso8601_micro }}"
     status_code: 201
   register: trigger
   changed_when: 201 == trigger.status
