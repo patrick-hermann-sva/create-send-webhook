@@ -1,7 +1,7 @@
 ---
 # defaults file for create-send-webhook
-send_to_msteams: false
-send_to_elastic: true
+send_to_msteams: true
+send_to_elastic: false
 
 ignore_webhook_errors: false
 logo_pic: "https://www.clipartmax.com/png/middle/120-1208387_cereal-guy-interested-by-rober-raik-cereal-guy-meme-png.png"
