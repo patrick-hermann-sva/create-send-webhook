@@ -7,6 +7,8 @@
     body: "{{ lookup('template', './body.json.j2', template_vars=dict(data=item.webhook)) }}"
     body_format: json
     status_code: 201
+  with_items:
+    "{{ webhook }}"
   register: trigger
   changed_when: 201 == trigger.status
   ignore_errors: "{{ ignore_webhook_errors }}"

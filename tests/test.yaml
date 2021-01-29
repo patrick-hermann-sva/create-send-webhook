@@ -16,40 +16,9 @@
     elasticsearch_url: http://elk-test.labul.sva.de:9200
     indexname: vsphere-vm
     ignore_webhook_errors: false
-
     webhook:
       time: "{{ ansible_date_time.iso8601_micro }}"
-      jenkins_admin_password:
-      jenkins_admin_user:
-      jenkins_url: http://jenkins.labul.sva.de
-      msteams_webhook_url: https://outlook.office.com/webhook/2f14a9f8-4736-46dd-9c8c-31547ec37180@0a65cb1e-37d5-41ff-980a-647d9d0e4f0b/IncomingWebhook/70f1b61bd3e34f928d664ea1b6ee1c30/dc3a27ed-396c-40b7-a9b2-f1a2b6b44efe
-      jenkins_admin_token: 
-
+      HOSTNAME: server1
 
   roles:
     - create-send-webhook
-
-# ---
-# - name: POST data into elasticsearch
-#   hosts: "{{ target_host | default('localhost') }}"
-#   gather_facts: yes
-
-#   vars:
-#     elasticsearch_url: http://elk-test.labul.sva.de:9200
-#     indexname: vsphere-vm
-
-#   tasks:
-
-#     - debug:
-#         var: ansible_date_time.epoch
-
-#     - name: POST data into elasticsearch
-#       ansible.builtin.uri:
-#         url: "{{ elasticsearch_url }}/{{ indexname }}/_doc"
-#         method: POST
-#         return_content: yes
-#         body: {"time" : "{{ ansible_date_time.iso8601_micro }}", "HOSTNAME": "server-01" }
-#         status_code: 201
-#         body_format: json
-#       register: trigger
-#       changed_when: 201 == trigger.status
