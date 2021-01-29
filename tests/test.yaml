@@ -17,8 +17,9 @@
     indexname: vsphere-vm
     ignore_webhook_errors: false
     webhook:
-      time: "{{ ansible_date_time.iso8601_micro }}"
-      HOSTNAME: server1
+      webhook:
+        time: "{{ ansible_date_time.iso8601_micro }}"
+        HOSTNAME: server1
 
   roles:
     - create-send-webhook
