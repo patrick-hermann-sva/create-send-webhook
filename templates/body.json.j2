@@ -1,8 +1,5 @@
-{
-    "data": {
-        {% for key, value in data.items() %}
-        "{{ key }}": "{{ value }}"{{ "," if not loop.last else "" }}
-        {% endfor %}
-    },
-    "options": {}
+"data": {
+    {% for key, value in data.items() %}
+    "{{ key }}": "{{ value }}"{{ "," if not loop.last else "" }}
+    {% endfor %}
 }
