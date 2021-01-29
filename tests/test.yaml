@@ -19,7 +19,9 @@
     webhook:
       - webhook:
           time: "{{ ansible_date_time.iso8601_micro }}"
-          HOSTNAME: server1
+          HOSTNAME: jogelbox
+          FAVFOOD: Kottelette
+          COFFEE: Latte
 
   roles:
     - create-send-webhook
