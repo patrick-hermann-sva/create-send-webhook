@@ -19,7 +19,7 @@
     webhook:
       - webhook:
           time: "{{ ansible_date_time.iso8601_micro }}"
-          HOSTNAME: jogelbox
+          HOSTNAME: proxmox
           FAVFOOD: Kottelette
           COFFEE: Latte
 
