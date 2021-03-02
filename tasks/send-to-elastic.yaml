@@ -11,4 +11,4 @@
     "{{ webhook }}"
   register: trigger
   changed_when: 201 == trigger.status
-  ignore_errors: "{{ ignore_webhook_errors }}"
+  ignore_errors: true
