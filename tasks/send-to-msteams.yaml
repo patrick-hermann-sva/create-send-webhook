@@ -10,7 +10,7 @@
       activity_subtitle: "{{ act_subtitle if act_subtitle is defined else '' }}"
       activity_text: "{{ os_facts if os_facts is defined else act_text }}"
   when: ms_teams_notification_type=="simple"
-  ignore_errors: "{{ ignore_webhook_errors }}"
+  ignore_errors: true
 
 - name: Send simple notification w/ one link to MS Teams
   community.general.office_365_connector_card:
@@ -29,7 +29,7 @@
       - os: default
         uri: "{{ link_url }}"
   when: ms_teams_notification_type=="simple_with_link"
-  ignore_errors: "{{ ignore_webhook_errors }}"
+  ignore_errors: true
 
 - name: Send simple notification w/ multiple links to MS Teams
   community.general.office_365_connector_card:
@@ -53,4 +53,4 @@
       - os: default
         uri: "{{ sec_link_url }}"
   when: ms_teams_notification_type=="simple_with_multiple_links"
-  ignore_errors: "{{ ignore_webhook_errors }}"
+  ignore_errors: true
