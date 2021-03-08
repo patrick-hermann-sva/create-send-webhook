@@ -1,7 +1,7 @@
 stuttgart-things/create-send-webhook
 =======================================
 
-role to configure and send customized webhooks to targets like MS TEAMS (supports connector cards).
+configure and send customized webhooks to targets like MS TEAMS (supports connector cards).
 
 install this role
 -----------------
