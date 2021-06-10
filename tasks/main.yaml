@@ -6,3 +6,7 @@
 - name: Send notification to Elasticsearch
   include_tasks: send-to-elastic.yaml
   when: send_to_elastic|bool
+
+- name: Install webhook-server
+  include_tasks: install-webhook-server.yaml
+  when: install_webhook_server|bool

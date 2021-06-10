@@ -2,11 +2,28 @@
 # defaults file for create-send-webhook
 send_to_msteams: false
 send_to_elastic: false
+install_webhook_server: false
 
 ignore_webhook_errors: false
 logo_pic: "https://www.clipartmax.com/png/middle/120-1208387_cereal-guy-interested-by-rober-raik-cereal-guy-meme-png.png"
 failure_pic: "https://anthillonline.com/wp-content/uploads/2020/06/failure.png"
-ms_teams_notification_type: "simple"
+ms_teams_notification_type: simple
+
+webhook_version: 2.8.0
+systemd_path: /etc/systemd/system
+heartbeat_service_name: webhook.service
+webhook_working_dir: /tmp
+
+webhook:
+  webhook:
+    bin_name: webhook
+    bin_version: "{{ webhook_version }}"
+    source_url: "https://github.com/adnanh/webhook/releases/download/{{ webhook_version }}/webhook-linux-amd64.tar.gz"
+    bin_to_copy: webhook
+    bin_dir: /usr/bin/webhook
+    to_remove: webhook
+    check_bin_version_before_installing: true
+
 quotes:
   - "Nice Job Bro"
   - "Excellent"
@@ -135,3 +152,5 @@ move_messages:
   - "'There’s no time for regrets. You’ve just got to keep moving forward.' (Mike McCready)"
   - "'Kid, you'll move mountains.' (Dr. Seuss)"
   - "'Some days it's just about moving and not stopping.' (Christine E. Szymanski)"
+
+

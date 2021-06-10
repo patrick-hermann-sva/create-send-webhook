@@ -1,0 +1,15 @@
+---
+- name: Install webhook-server
+  ansible.builtin.include_role:
+    name: download-install-binary
+  loop: "{{ lookup('dict', webhook, wantlist=True) }}"
+  tags: setup
+
+# template script
+# template webhook config
+
+- name: Create webhook-server service config 
+  ansible.builtin.template:
+    src: webhook-server-service.j2
+    dest: "{{ systemd_path }}/{{ webhook_service_name }}"
+
