@@ -8,7 +8,7 @@
 # template script
 # template webhook config
 
-- name: Create webhook-server service config 
+- name: Create service config for {{ webhook }}
   ansible.builtin.template:
     src: webhook-server-service.j2
     dest: "{{ systemd_path }}/{{ webhook_service_name }}"

@@ -1,0 +1,6 @@
+- id: {{ webhook }}
+  execute-command: {{ webhook_execute_cmd }}
+  command-working-directory: {{ webhook_work_dir }}
+  pass-arguments-to-command:
+  - source: payload
+    name: message.ip

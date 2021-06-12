@@ -1,11 +1,10 @@
 [Unit]
-Description=Webhook service Service
+Description={{ webhook }} webhook service
 After=network.target
 [Service]
 Type=simple
 WorkingDirectory={{ webhook_working_dir }}
-ExecStart=/usr/bin/webhook
+ExecStart=/usr/bin/webhook -verbose -hooks {{ webhook }}
 RemainAfterExit=yes
 [Install]
-WantedBy=multi-user.target
-
+WantedBy=multi-user.targets
