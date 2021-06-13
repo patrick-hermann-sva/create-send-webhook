@@ -24,6 +24,24 @@ webhook:
     to_remove: webhook
     check_bin_version_before_installing: true
 
+webhook_username: webhook
+webhook_groupname: webhook
+
+admin_group: "{{ 'wheel' if ansible_os_family == 'RedHat' else 'sudo' }}" 
+
+webhook_group:
+  - name: "{{ webhook_groupname }}"
+    gid: 4000
+
+webhook_user:
+  - username: "{{ webhook_username }}"
+    name: "{{ webhook_username }} user"
+    groups: ['{{ admin_group }}','{{ webhook_groupname }}']
+    home: "/home/webhook"
+    profile: |
+      alias ll='ls -ahl'
+    enable_ssh_tcp_forwarding: True
+
 quotes:
   - "Nice Job Bro"
   - "Excellent"

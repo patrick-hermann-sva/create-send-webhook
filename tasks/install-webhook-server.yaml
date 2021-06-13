@@ -16,8 +16,8 @@
   ansible.builtin.file:
     path: "{{ item }}"
     state: directory
-    owner: "{{ webhook_user }}"
-    group: "{{ webhook_group }}"
+    owner: "{{ webhook_username }}"
+    group: "{{ webhook_groupname }}"
   tags: webhook_server, config
   loop: 
     - "{{ path_execute_script | dirname }}"
@@ -28,6 +28,8 @@
   ansible.builtin.template:
     src: webhook-server-service.j2
     dest: "{{ systemd_path }}/{{ webhook_service_name }}"
+    owner: "{{ webhook_username }}"
+    group: "{{ webhook_groupname }}"
   loop:
     - { template: webhook-server-service.j2, dest: "{{ systemd_path }}/{{ webhook_service_name }}" }    
     - { template: script.sh.j2, dest: "{{ path_execute_script }}" }    
