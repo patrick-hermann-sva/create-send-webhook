@@ -2,7 +2,7 @@
 - name: Install webhook-server
   ansible.builtin.include_role:
     name: download-install-binary
-  loop: "{{ lookup('dict', webhook, wantlist=True) }}"
+  loop: "{{ lookup('dict', webhook_bin, wantlist=True) }}"
   tags: setup
 
 - name: Create webhook user
@@ -26,14 +26,15 @@
 
 - name: Create config files for {{ webhook }}
   ansible.builtin.template:
-    src: webhook-server-service.j2
-    dest: "{{ systemd_path }}/{{ webhook_service_name }}"
+    src: "{{ item.template }}"
+    dest: "{{ item.dest }}"
+    mode: "{{ item.mode }}" 
     owner: "{{ webhook_username }}"
     group: "{{ webhook_groupname }}"
   loop:
-    - { template: webhook-server-service.j2, dest: "{{ systemd_path }}/{{ webhook_service_name }}" }    
-    - { template: script.sh.j2, dest: "{{ path_execute_script }}" }    
-    - { template: webhook-config.yaml.j2, dest: "{{ path_webhook_config }}" }   
+    - { template: webhook-server-service.j2, dest: "{{ systemd_path }}/{{ webhook_service_name }}", mode: 0644 }    
+    - { template: script.sh.j2, dest: "{{ path_execute_script }}", mode: a+x }    
+    - { template: webhook-config.yaml.j2, dest: "{{ path_webhook_config }}", mode: a+x }   
 
 - name: Ensure container's exposed ports firewall state
   tags: firewall
