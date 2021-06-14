@@ -6,7 +6,7 @@ Type=simple
 User={{ webhook_username }}
 Group={{ webhook_groupname }}
 WorkingDirectory={{ webhook_working_dir }}
-ExecStart=/usr/bin/webhook -verbose -hooks {{ webhook }} -port {{ webhook_port }}
+ExecStart=/usr/bin/webhook -verbose -hooks {{ path_webhook_config }} -port {{ webhook_port }}
 RemainAfterExit=yes
 [Install]
 WantedBy=multi-user.target
